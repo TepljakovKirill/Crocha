@@ -1,0 +1,16 @@
+.navigation-list {
+  height: 108px;
+  max-width: 920px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation-link {
+  color: #878787;
+}
+
+.navigation-bunner {
+  width: 100%;
+  height: auto;
+}

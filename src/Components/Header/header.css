@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  background-color: #9ecdd6;
+}
+
+.header-container {
+  height: 91px;
+  padding: 0 10px;
+  max-width: 920px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-link {
+  font-weight: 700;
+  color: #fff;
+}
+
+.header-link:first-child {
+  margin-right: 68px;
+}
+
+.logo-link {
+  margin-right: 200px;
+}
+
+.cart-link {
+  margin-right: 12px;
+}
