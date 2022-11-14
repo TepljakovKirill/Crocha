@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 113px;
+  width: 100%;
+  background-color: #9ecdd6;
+}
+
+.footer-container {
+  height: 146px;
+  padding: 0 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-descr {
+  max-width: 380px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+
+.footer-social a:not(:last-child) {
+  margin-right: 23px;
+}

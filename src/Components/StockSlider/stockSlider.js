@@ -56,7 +56,7 @@ function StockSlider() {
                 <div className="cart-price flex">
                   <p className="cart-price__total">{item.price} ₽</p>
                   <p className="cart-price__old">
-                    {item.oldPrice ? item.oldPrice : 0} ₽
+                    {item.oldPrice ? item.oldPrice : " "} ₽
                   </p>
                 </div>
                 <div className="cart-button flex">
