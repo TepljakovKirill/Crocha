@@ -1,4 +1,5 @@
 import React from "react";
+import ShoppingCart from "./Components/ShoppingCart/shoppingCart";
 import Header from "./Components/Header/header";
 import Navigation from "./Components/Navigation/navigation";
 import StockSlider from "./Components/StockSlider/stockSlider";
@@ -8,6 +9,7 @@ import "./App.css";
 function App() {
   return (
     <div className="site-wrapper">
+      <ShoppingCart />
       <header>
         <Header />
       </header>
