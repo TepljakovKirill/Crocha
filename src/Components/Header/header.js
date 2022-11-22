@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <div className="header-container flex">
@@ -16,7 +16,7 @@ function Header() {
         <a className="logo-link" href="#">
           <img src="./img/logo.svg" alt="logo" />
         </a>
-        <a className="cart-link" href="#">
+        <a onClick={props.onClickCart} className="cart-link" href="#">
           <img src="./img/cart.svg" alt="cart" />
         </a>
       </div>

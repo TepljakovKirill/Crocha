@@ -7,11 +7,19 @@ import Footer from "./Components/Footer/footer";
 import "./App.css";
 
 function App() {
+  const [cartOpened, setCartOpened] = React.useState(false);
+  const [cartShopping, setCartShopping] = React.useState([]);
+
   return (
     <div className="site-wrapper">
-      <ShoppingCart />
+      {cartOpened ? (
+        <ShoppingCart
+          totalCart={cartShopping}
+          onCloseCart={() => setCartOpened(false)}
+        />
+      ) : null}
       <header>
-        <Header />
+        <Header onClickCart={() => setCartOpened(true)} />
       </header>
       <main>
         <Navigation />
