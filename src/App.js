@@ -12,16 +12,16 @@ function App() {
 
   return (
     <div className="site-wrapper">
-      {cartOpened ? (
-        <ShoppingCart
-          totalCart={cartShopping}
-          onCloseCart={() => setCartOpened(false)}
-        />
-      ) : null}
       <header>
         <Header onClickCart={() => setCartOpened(true)} />
       </header>
       <main>
+        {cartOpened ? (
+          <ShoppingCart
+            totalCart={cartShopping}
+            onCloseCart={() => setCartOpened(false)}
+          />
+        ) : null}
         <Navigation />
         <StockSlider />
       </main>
