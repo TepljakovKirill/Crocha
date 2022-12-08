@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./Components/Header/header";
 import Navigation from "./Components/Navigation/navigation";
 import Slider from "./Components/Slider/slider";
