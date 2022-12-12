@@ -28,7 +28,6 @@ function Navigation() {
           </li>
         </ul>
       </nav>
-      <img className="navigation-bunner" src="./img/bunner.jpg" alt="cart" />
     </div>
   );
 }

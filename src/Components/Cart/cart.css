@@ -49,16 +49,6 @@
   color: #c4c4c4;
 }
 
-/* .cart-price__old::after {
-  content: "";
-  position: absolute;
-  width: 55px;
-  height: 1px;
-  background-color: #c4c4c4;
-  top: 10px;
-  left: -4px;
-} */
-
 .cart-button {
   margin-top: 17px;
   margin-left: 2px;
