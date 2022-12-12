@@ -1,9 +1,8 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/header";
-import Navigation from "./Components/Navigation/navigation";
-import Slider from "./Components/Slider/slider";
-import StockSlider from "./Components/StockSlider/stockSlider";
-import Footer from "./Components/Footer/footer";
+import Home from "./pages/home";
+import NotFound from "./pages/notFound";
 import "./App.css";
 
 function App() {
@@ -12,14 +11,10 @@ function App() {
       <header>
         <Header />
       </header>
-      <main>
-        <Navigation />
-        <Slider />
-        <StockSlider />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="* " element={<NotFound />}></Route>
+      </Routes>
     </div>
   );
 }
