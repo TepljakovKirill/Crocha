@@ -17,6 +17,16 @@
   color: #fff;
 }
 
+.header-link a {
+  transition: 0.2s ease-in;
+  color: #fff;
+}
+
+.header-link a:hover {
+  transition: 0.2s ease-in;
+  color: rgb(223, 214, 214);
+}
+
 .header-link:first-child {
   margin-right: 68px;
 }

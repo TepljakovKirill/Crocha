@@ -1,9 +1,31 @@
-.img-wrapper {
-  width: 100%;
+.slick-slide img {
+  max-width: 100%;
   height: auto;
 }
 
-.slick-slide img {
-  width: 100%;
-  height: auto;
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: white;
+}
+
+.slick-dots li button {
+  width: 29px;
+  height: 3px;
+}
+
+.slick-dots li {
+  width: 29px;
+  height: 3px;
+}
+
+.slick-dots li button:before {
+  background-color: #fff;
+  bottom: 10px;
+  content: "";
+  width: 29px;
+  height: 3px;
 }
