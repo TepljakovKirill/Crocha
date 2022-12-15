@@ -1,0 +1,32 @@
+.rewiews-container {
+  margin-top: 32px;
+  margin-bottom: 55px;
+  padding: 15px 36px 95px 36px;
+  border: 1.5px solid #eeeeee;
+  border-radius: 30px;
+}
+
+.rating {
+  margin-top: 14px;
+  align-items: center;
+}
+
+.nameReviewsBlock {
+  margin-top: 41px;
+}
+
+.nameBlock {
+  margin-bottom: 15px;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.blockStars {
+  margin: 5px 0;
+}
+
+.nameReviewsBlock-descr {
+  max-width: 830px;
+}

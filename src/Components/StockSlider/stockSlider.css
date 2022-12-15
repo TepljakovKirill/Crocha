@@ -1,17 +1,15 @@
 .slider-container {
   margin-top: 58px;
+  margin-bottom: 113px;
   padding: 25px 45px 42px 43px;
   border: 1.5px solid #eeeeee;
   border-radius: 30px;
 }
 
 .slider-container h1 {
-  font-family: "Montserrat-Bold";
   margin-bottom: 28px;
-  font-weight: 700;
-  font-size: 24px;
-  color: #878787;
 }
+
 .slider-container {
   margin-top: 58px;
   padding: 25px 45px 42px 43px;

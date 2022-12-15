@@ -7,6 +7,13 @@
   padding: 0;
 }
 
+h1 {
+  font-family: "Montserrat-Bold";
+  font-weight: 700;
+  font-size: 24px;
+  color: #878787;
+}
+
 ul {
   list-style: none;
 }
