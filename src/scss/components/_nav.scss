@@ -1,0 +1,13 @@
+nav {
+    height: 108px;
+    align-items: center;
+
+    ul {
+        width: 100%;
+        justify-content: space-between;
+
+        a {
+            color: $text-color;
+        }
+    }
+}
