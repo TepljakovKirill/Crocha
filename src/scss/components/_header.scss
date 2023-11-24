@@ -1,30 +1,46 @@
-ul {
-    align-items: center;
-}
-
 .header {
     width: 100%;
     background-color: $blue;
 
     .header-wrapper {
-        height: 91px;
-        align-items: center;
-        justify-content: space-between;
+        padding: 0 145px;
 
-        ul {
+        .block-wrap {
+            height: 91px;
+            align-items: center;
+            justify-content: space-between;
 
-            li:first-child {
-                margin-right: 68px;
+            ul {
+
+                li:first-child {
+                    margin-right: 68px;
+                }
+
+                a {
+                    color: $white;
+                    transition: 0.2s ease-in;
+                }
+
+                a:hover {
+                    color: #0077AA;
+                    transition: 0.3s ease-in;
+                }
             }
 
-            a {
-                color: $white;
+            .logo {
+                margin-right: 17vmax;
             }
-        }
 
-        .logo {
-            margin-right: 17vmax;
+            .cart {
+                margin-top: 10px;
+                margin-right: 13px;
+                transition: 0.3s ease-in;
+            }
+
+            .cart:hover path {
+                stroke: #0077AA;
+                transition: 0.3s ease-in;
+            }
         }
     }
 }
-

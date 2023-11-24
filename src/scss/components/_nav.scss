@@ -1,13 +1,23 @@
-nav {
-    height: 108px;
-    align-items: center;
+.nav-wrap {
+    padding: 0 145px;
 
-    ul {
-        width: 100%;
-        justify-content: space-between;
+    nav {
+        height: 108px;
+        align-items: center;
 
-        a {
-            color: $text-color;
+        ul {
+            width: 100%;
+            justify-content: space-between;
+
+            a {
+                color: $text-color;
+                transition: 0.2s ease-in;
+            }
+
+            a:hover {
+                color: #EDCC65;
+                transition: 0.2s ease-in;
+            }
         }
     }
 }

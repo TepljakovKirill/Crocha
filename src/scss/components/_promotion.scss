@@ -1,0 +1,80 @@
+.promotion-contaner {
+    margin-top: 58px;
+    padding: 25px 43px;
+    border-radius: 30px;
+    border: 1.5px solid #EEE;
+    background: #FFF;
+
+    .promoton-block {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 32px;
+        grid-row-gap: 28px;
+    }
+
+    .promotion-card {
+        position: relative;
+        width: 262px;
+        border-radius: 20px;
+        border: 1.5px solid #E5E5E5;
+        background: #FFF;
+        overflow: hidden;
+
+        .card-descr {
+            padding: 15px 17px 17px 15px;
+
+            p {
+                font-size: 14px;
+                color: $text-color;
+            }
+
+            .card-price__block {
+                margin-top: 7px;
+                justify-content: left;
+                align-items: center;
+
+
+                .card-price {
+                    font-family: "Montserrat-Bold";
+                    margin-right: 15px;
+                    font-size: 18px;
+                }
+
+                .card-price__old {
+                    padding: 0 7px;
+                    font-size: 18px;
+                    position: relative;
+                }
+
+                .card-price__old:before {
+                    content: '';
+                    position: absolute;
+                    top: 45%;
+                    left: 0;
+                    z-index: 5;
+                    width: 60px;
+                    height: 1px;
+                    background: $text-color;
+                }
+            }
+
+            .card-button__block {
+                margin-top: 17px;
+                justify-content: space-between;
+            }
+        }
+
+        .promotion-card--discount {
+            position: absolute;
+            top: 12px;
+            right: 17px;
+            font-size: 14px;
+            color: $white;
+            padding: 5px;
+            border-radius: 5px;
+            background: $discount-color;
+        }
+
+    }
+}

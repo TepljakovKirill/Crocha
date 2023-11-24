@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(./fonts/Montserrat-Regular.woff2) format("woff2"),
+    url(./fonts/Montserrat-Regular.woff) format("woff");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url(./fonts/Montserrat-Bold.woff2) format("woff2"),
+    url(./fonts/Montserrat-Bold.woff) format("woff");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
 @import '/src/scss/variables';
 @import '/src/scss/libs/normalize';
 
@@ -5,19 +23,57 @@
 
 body {
   color: $text-color;
-  background-color: #000;
 }
 
 .container {
-    max-width: 1248px;
-    padding: 0 10px;
-    margin-left:auto;
-    margin-right:auto;
+  max-width: 1248px;
+  padding: 0 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
+.title-block {
+  font-family: "Montserrat-Bold";
+  color: $text-color;
+  font-size: 24px;
+}
 
+.button-grey,
+.button-blue {
+  font-family: "Montserrat-Bold";
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
+.button-grey {
+  color: $button-grey-color;
+  border: 1.5px solid $button-grey-color;
+  background: #FFF;
+  transition: 0.3s ease-in;
+}
+
+.button-grey:hover {
+  color: $white;
+  background-color: $button-grey-color;
+  transition: 0.3s ease-in;
+}
+
+.button-blue {
+  background-color: $button-blue-color;
+  color: $white;
+  border: 1.5px solid $button-blue-color;
+  transition: 0.3s ease-in;
+}
+
+.button-blue:hover {
+  background-color: $button-blue-hover;
+  color: $white;
+  border: 1.5px solid $button-blue-hover;
+  transition: 0.3s ease-in;
+}
