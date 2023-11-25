@@ -1,21 +1,17 @@
 import React from "react";
 import PromotionCard from "../promotionCard/promotionCard";
-import { cards } from "../../mocks/cards";
-
-
+import { Card } from "../../types/types";
 
 function Promotion() {
-    // const [cards, setCards] = React.useState([]);
+    const [cards, setCards] = React.useState<Array<Card>>([]);
 
-    // React.useEffect(() => {
-    //     fetch('https://6561a5f3dcd355c0832404d3.mockapi.io/')
-    //         .then((res) => {
-    //             return res.json;
-    //         })
-    //         .then((arr) => {
-    //             return setCards(arr);
-    //         });
-    // }, []);
+    React.useEffect(() => {
+        fetch('https://6561a5f3dcd355c0832404d3.mockapi.io/card')
+            .then((res) => res.json())
+            .then((arr) => {
+                setCards(arr);
+            });
+    }, []);
 
     return (
         <div className="promoton">
