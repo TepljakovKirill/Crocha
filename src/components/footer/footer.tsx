@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <div className="footer">
       <div className="container">
         <div className="footer-container flex">
-          <a className="logo" href="#">
+          <Link className="logo" to="/">
             <img src="img/logo.svg" alt="Crocha логотип" />
-          </a>
+          </Link>
           <p>
             Руководитель организации: генеральный директор Давыдова Мария
             Сергеевна. Юридический адрес ПАО "Детский Мир" - 119415, город
