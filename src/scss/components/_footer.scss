@@ -1,0 +1,34 @@
+.footer {
+    background-color: $blue;
+
+    .footer-container {
+        height: 146px;
+        padding: 0 43px;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            max-width: 450px;
+            color: $white;
+            font-size: 12px;
+        }
+
+        .footer-social {
+            margin-right: 50px;
+
+            a {
+                transition: 0.2s ease-in;
+            }
+
+            a:not(:last-child) {
+                margin-right: 23px;
+            }
+
+            a:hover path {
+                fill: #EDCC65;
+                transition: 0.2s ease-in;
+            }
+        }
+    }
+}
+

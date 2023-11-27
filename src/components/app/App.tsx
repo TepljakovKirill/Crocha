@@ -3,6 +3,7 @@ import Nav from "../nav/nav";
 import "../../App.scss";
 import Bunner from "../../components/bunner/bunner";
 import Promotion from "../promotion/promotion";
+import Footer from "../footer/footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Bunner />
       <Promotion />
+      <Footer />
     </>
   );
 }
