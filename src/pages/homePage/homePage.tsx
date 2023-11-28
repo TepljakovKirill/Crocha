@@ -1,18 +1,42 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 
 import Nav from "../../components/nav/nav";
 import Bunner from "../../components/bunner/bunner";
 import Promotion from "../../components/promotion/promotion";
+import ProductDetails from "../../components/productDetails/productDetails";
+
 
 function HomePage() {
+  const [visibleProduct, setVisibleProduct] = React.useState<boolean>(true);
+
+  function onOpenProduct() {
+    setVisibleProduct(false);
+  }
+
+  function onCloseProduct() {
+    setVisibleProduct(true);
+  }
   return (
     <>
       <Helmet>
         <title>Croch - Главная страница</title>
       </Helmet>
-      <Nav />
-      <Bunner />
-      <Promotion />
+      {visibleProduct ?
+        <div>
+          <Nav />
+          <Bunner />
+          <Promotion onOpenProduct={onOpenProduct} />
+        </div> :
+        <div>
+          <>
+            <Nav />
+            <Bunner />
+            <Promotion onOpenProduct={onOpenProduct} />
+          </>
+          <ProductDetails onCloseProduct={onCloseProduct} />
+        </div>}
+
     </>
   );
 }

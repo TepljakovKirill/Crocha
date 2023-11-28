@@ -2,7 +2,11 @@ import React from "react";
 import PromotionCard from "../promotionCard/promotionCard";
 import { Card } from "../../types/types";
 
-function Promotion() {
+type TPromotionProps = {
+    onOpenProduct: boolean;
+}
+
+function Promotion({ onOpenProduct }: TPromotionProps) {
     const [cards, setCards] = React.useState<Array<Card>>([]);
 
     React.useEffect(() => {
@@ -20,7 +24,7 @@ function Promotion() {
                     <div className="title-block">Акции</div>
                     <div className="promoton-block">
                         {cards.map((card) => (
-                            <PromotionCard card={card} key={card.id} />
+                            <PromotionCard onOpenProduct={onOpenProduct} card={card} key={card.id} />
                         ))}
                     </div>
                 </div>
