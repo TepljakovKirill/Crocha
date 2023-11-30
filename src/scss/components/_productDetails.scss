@@ -109,6 +109,21 @@
         }
     }
 
+    &-reviews {
+        margin-top: 32px;
+
+        .product-reviews__title {
+            margin-top: 17px;
+            font-size: 14px;
+            font-family: "Montserrat-Bold";
+            text-align: center;
+        }
+
+        .product-reviews__block {
+            margin-top: 26px;
+        }
+    }
+
     .product-close__button {
         position: absolute;
         top: -15px;
