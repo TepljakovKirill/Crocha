@@ -6,15 +6,14 @@ import Bunner from "../../components/bunner/bunner";
 import Promotion from "../../components/promotion/promotion";
 import ProductDetails from "../../components/productDetails/productDetails";
 
-
 function HomePage() {
   const [visibleProduct, setVisibleProduct] = React.useState<boolean>(true);
 
-  function onOpenProduct() {
+  function onOpenProduct(): void {
     setVisibleProduct(false);
   }
 
-  function onCloseProduct() {
+  function onCloseProduct(): void {
     setVisibleProduct(true);
   }
   return (
@@ -22,12 +21,13 @@ function HomePage() {
       <Helmet>
         <title>Croch - Главная страница</title>
       </Helmet>
-      {visibleProduct ?
+      {visibleProduct ? (
         <div>
           <Nav />
           <Bunner />
           <Promotion onOpenProduct={onOpenProduct} />
-        </div> :
+        </div>
+      ) : (
         <div>
           <>
             <Nav />
@@ -35,8 +35,8 @@ function HomePage() {
             <Promotion onOpenProduct={onOpenProduct} />
           </>
           <ProductDetails onCloseProduct={onCloseProduct} />
-        </div>}
-
+        </div>
+      )}
     </>
   );
 }
