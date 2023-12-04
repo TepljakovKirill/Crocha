@@ -1,20 +1,32 @@
+import { Card } from "../../types/types";
+
 type TProductDetailsProps = {
   onCloseProduct: () => void;
+  cardId: number;
+  detailsProduct: Card;
 };
 
-function ProductDetails({ onCloseProduct }: TProductDetailsProps) {
+function ProductDetails({
+  onCloseProduct,
+  cardId,
+  detailsProduct,
+}: TProductDetailsProps) {
+  const array = detailsProduct[cardId - 1];
+
+  const { imageUrl, title, price, oldPrice } = array;
+
   return (
     <div className="overlay">
       <div className="product">
         <div className="product-block flex">
           <div className="product-block__img">
-            <img src="../../../public/img/product-1.jpg" alt="Фото товара" />
+            <img src={imageUrl} alt="Фото товара" />
           </div>
           <div className="product-block__descr flex">
-            <p className="product-block__title">Платье с цветочным узором</p>
+            <p className="product-block__title">{title}</p>
             <div className="product-block__price flex">
-              <div className="product-price">899 ₽</div>
-              <div className="product-price__old">839 ₽</div>
+              <div className="product-price">{price} ₽</div>
+              <div className="product-price__old">{oldPrice} ₽</div>
             </div>
             <div className="product-block__line"></div>
             <input type="text" placeholder="Размер 1" />

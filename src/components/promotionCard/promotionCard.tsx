@@ -2,11 +2,12 @@ import { Card } from "../../types/types";
 
 type TPromotionCardProps = {
   card: Card;
-  onOpenProduct: () => void;
+  onViewProduct: (id: number) => number;
 };
 
-function PromotionCard({ card, onOpenProduct }: TPromotionCardProps) {
-  const { imageUrl, title, price, oldPrice, discount, discountValue } = card;
+function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
+  const { id, imageUrl, title, price, oldPrice, discount, discountValue } =
+    card;
   return (
     <div className="promotion-card">
       <img src={imageUrl} alt="Фото товара" />
@@ -17,7 +18,7 @@ function PromotionCard({ card, onOpenProduct }: TPromotionCardProps) {
           {oldPrice > 0 ? <p className="card-price__old">{oldPrice} ₽</p> : " "}
         </div>
         <div className="card-button__block flex">
-          <button onClick={onOpenProduct} className="button-grey">
+          <button onClick={() => onViewProduct(id)} className="button-grey">
             Смотреть
           </button>
           <button className="button-blue">В корзину</button>
