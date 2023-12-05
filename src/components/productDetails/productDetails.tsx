@@ -1,3 +1,4 @@
+import Reviews from "../reviews/reviews";
 import { Card } from "../../types/types";
 
 type TProductDetailsProps = {
@@ -11,9 +12,9 @@ function ProductDetails({
   cardId,
   detailsProduct,
 }: TProductDetailsProps) {
-  const array = detailsProduct[cardId - 1];
+  const arrayDetail = detailsProduct[cardId - 1];
 
-  const { imageUrl, title, price, oldPrice } = array;
+  const { imageUrl, title, price, oldPrice } = arrayDetail;
 
   return (
     <div className="overlay">
@@ -41,26 +42,7 @@ function ProductDetails({
             </div>
           </div>
         </div>
-        <div className="product-reviews">
-          <div className="product-reviews__title">Отзывы</div>
-          <div className="product-reviews__block">
-            <div className="reviews">
-              <div className="reviews-img__block flex">
-                <img src="" alt="Фото" />
-                <div className="reviews-name">Антонина Семёновна</div>
-              </div>
-              <div className="reviews-rating"></div>
-              <p className="reviews-descr">
-                Купила в данном магазине летнее платье для дочки. Оставляю отзыв
-                после почти двух месяцев носки. Ребенок с радостью надевал вещь,
-                уж очень понравился принт и фасон. А мне понравилось качество
-                пошива, все швы аккуратные, ткань приятная, хб, после нескольких
-                стирок цвет не полинял. Обязательно вернусь в этот
-                интернет-магазин. С уважением, Антонина.
-              </p>
-            </div>
-          </div>
-        </div>
+        <Reviews />
         <button onClick={onCloseProduct} className="product-close__button">
           <svg
             width="16"

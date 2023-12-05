@@ -30,6 +30,11 @@
         &__img {
             width: 496px;
             height: 580px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         &__descr {
@@ -105,21 +110,6 @@
                 margin-top: 20px;
 
             }
-        }
-    }
-
-    &-reviews {
-        margin-top: 32px;
-
-        .product-reviews__title {
-            margin-top: 17px;
-            font-size: 14px;
-            font-family: "Montserrat-Bold";
-            text-align: center;
-        }
-
-        .product-reviews__block {
-            margin-top: 26px;
         }
     }
 
