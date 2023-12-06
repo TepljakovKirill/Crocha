@@ -6,6 +6,7 @@ import Bunner from "../../components/bunner/bunner";
 import Promotion from "../../components/promotion/promotion";
 import ProductDetails from "../../components/productDetails/productDetails";
 
+
 function HomePage() {
   const [visibleProduct, setVisibleProduct] = React.useState<boolean>(false);
   const [cardId, setCardId] = React.useState<number>(0);
@@ -20,9 +21,9 @@ function HomePage() {
       });
   }, []);
 
-  function onViewProduct(evt: React.MouseEvent) {
+  function onViewProduct(id: number) {
     setVisibleProduct(true);
-    setCardId(evt);
+    setCardId(id);
   }
 
   function onCloseProduct(): void {

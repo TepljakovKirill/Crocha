@@ -2,7 +2,7 @@ import { Card } from "../../types/types";
 
 type TPromotionCardProps = {
   card: Card;
-  onViewProduct: (id: number) => number;
+  onViewProduct: (id: number) => void;
 };
 
 function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {

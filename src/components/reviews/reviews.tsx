@@ -1,8 +1,7 @@
-import { Pagination, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./reviewsStyle.scss";
 
@@ -14,7 +13,7 @@ function Reviews() {
       <div className="product-reviews__title">Отзывы</div>
       <div className="product-reviews__block">
         <Swiper
-          modules={[Pagination, Navigation]}
+          modules={[Navigation]}
           slidesPerView={2}
           pagination={{
             clickable: true,

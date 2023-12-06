@@ -4,7 +4,7 @@ import { Card } from "../../types/types";
 type TProductDetailsProps = {
   onCloseProduct: () => void;
   cardId: number;
-  detailsProduct: Card;
+  detailsProduct: Card[];
 };
 
 function ProductDetails({

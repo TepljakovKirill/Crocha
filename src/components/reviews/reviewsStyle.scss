@@ -1,3 +1,9 @@
-.swiper-pagination-bullet {
-   display: none;
+.swiper-button-next::after {
+   font-size: 34px;
+   color: #00A9C8;
+}
+
+.swiper-button-prev::after {
+   font-size: 34px;
+   color: #00A9C8;
 }
