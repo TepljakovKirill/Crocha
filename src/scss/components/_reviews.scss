@@ -9,6 +9,7 @@
     }
 
     .product-reviews__block {
+
         margin-top: 26px;
 
         .reviews {
@@ -31,12 +32,17 @@
             }
 
             &-descr {
-                text-align:center;
+                margin-top: 5px;
+                text-align: center;
                 font-size: 12px;
             }
 
             &-rating {
-                margin-top: 10px;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }

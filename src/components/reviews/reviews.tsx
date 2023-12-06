@@ -1,3 +1,6 @@
+import goldStar from "../../../public/img/rating.png";
+import noneStar from "../../../public/img/rating-none.png";
+
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -7,7 +10,22 @@ import "./reviewsStyle.scss";
 
 import { reviews } from "../../mocks/reviews";
 
+function renderStarRating(star: number) {
+  const ratingStar = [];
+  for (let i = 0; i < array.length; i++) {
+    if (i < star) {
+      ratingStar.push(<img src={goldStar}></img>);
+    } else {
+      ratingStar.push(<img src={noneStar}></img>);
+    }
+  }
+  return ratingStar;
+}
+
+const array = Array(5).fill(<img src={noneStar}></img>);
+
 function Reviews() {
+
   return (
     <div className="product-reviews">
       <div className="product-reviews__title">Отзывы</div>
@@ -24,20 +42,19 @@ function Reviews() {
             <SwiperSlide key={slide.id}>
               <div className="reviews-img__block flex">
                 <img
-                  src="../../../public/img/reviews-img/reviews-1.jpg"
+                  src={slide.img}
                   alt="Фото"
                 />
-                <div className="reviews-name">Антонина Семёновна</div>
+                <div className="reviews-name">{slide.name}</div>
+                <div className="reviews-rating">
+                  {
+                    renderStarRating(slide.rating)
+                  }
+                </div>
                 <p className="reviews-descr">
-                  Купила в данном магазине летнее платье для дочки. Оставляю
-                  отзыв после почти двух месяцев носки. Ребенок с радостью
-                  надевал вещь, уж очень понравился принт и фасон. А мне
-                  понравилось качество пошива, все швы аккуратные, ткань
-                  приятная, хб, после нескольких стирок цвет не полинял.
-                  Обязательно вернусь в этот интернет-магазин. С уважением,
-                  Антонина.
+                  {slide.descr}
                 </p>
-                <div className="reviews-rating">htqnbyu</div>
+
               </div>
             </SwiperSlide>
           ))}
