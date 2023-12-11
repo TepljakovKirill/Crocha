@@ -8,7 +8,7 @@ function Header() {
           <div className="block-wrap flex">
             <ul className="flex">
               <li>
-                <Link to="#">Оплата и доставка</Link>
+                <Link to="/Оплата">Оплата и доставка</Link>
               </li>
               <li>
                 <a href="#">Отзывы</a>
@@ -17,7 +17,7 @@ function Header() {
             <Link className="logo" to="/">
               <img src="img/logo.svg" alt="Crocha логотип" />
             </Link>
-            <Link to="/basketPage">
+            <Link to="/Корзина">
               <svg
                 className="cart"
                 fill="none"

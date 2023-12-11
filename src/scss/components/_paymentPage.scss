@@ -1,0 +1,14 @@
+.playment {
+    padding-top: 44px;
+    height: calc(100vh - 237px);
+    max-width: 938px;
+
+    p:not(:first-child) {
+        margin-top: 25px;
+    }
+
+    &-title {
+        font-size: 24px;
+        font-family: "Montserrat-Bold";
+    }
+}
