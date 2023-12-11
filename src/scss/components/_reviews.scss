@@ -20,7 +20,7 @@
                 flex-direction: column;
                 justify-content: center;
 
-                img {
+                .reviews-img {
                     width: 90px;
                     height: 90px;
                     border-radius: 50%;
@@ -38,12 +38,10 @@
             }
 
             &-rating {
-
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
+                justify-content: center;
+                align-items: center;
             }
+
         }
     }
 }

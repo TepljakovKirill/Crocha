@@ -1,3 +1,4 @@
+import React from "react";
 import Reviews from "../reviews/reviews";
 import { Card } from "../../types/types";
 
@@ -12,6 +13,7 @@ function ProductDetails({
   cardId,
   detailsProduct,
 }: TProductDetailsProps) {
+  const [selectedSize, setSelectedSize] = React.useState("Размер 1");
   const arrayDetail = detailsProduct[cardId - 1];
 
   const { imageUrl, title, price, oldPrice } = arrayDetail;
@@ -27,10 +29,27 @@ function ProductDetails({
             <p className="product-block__title">{title}</p>
             <div className="product-block__price flex">
               <div className="product-price">{price} ₽</div>
-              <div className="product-price__old">{oldPrice} ₽</div>
+              {oldPrice > 0 ? (
+                <div className="product-price__old">{oldPrice} ₽</div>
+              ) : (
+                ""
+              )}
             </div>
             <div className="product-block__line"></div>
-            <input type="text" placeholder="Размер 1" />
+
+            <form method="post">
+              <select
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
+                name="selectSize"
+                className="product-select"
+              >
+                <option value="size-1">Размер 1</option>
+                <option value="size-2">Размер 2</option>
+                <option value="size-3">Размер 3</option>
+              </select>
+            </form>
+
             <button className="product-button">В корзину</button>
             <div className="product-description">
               <p className="product-description__title">Описание:</p>

@@ -25,7 +25,6 @@ function renderStarRating(star: number) {
 const array = Array(5).fill(<img src={noneStar}></img>);
 
 function Reviews() {
-
   return (
     <div className="product-reviews">
       <div className="product-reviews__title">Отзывы</div>
@@ -41,20 +40,16 @@ function Reviews() {
           {reviews.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className="reviews-img__block flex">
-                <img
-                  src={slide.img}
-                  alt="Фото"
-                />
+                <img className="reviews-img" src={slide.img} alt="Фото" />
                 <div className="reviews-name">{slide.name}</div>
-                <div className="reviews-rating">
-                  {
-                    renderStarRating(slide.rating)
-                  }
+                <div className="reviews-rating flex">
+                  {renderStarRating(slide.rating).map((star, index) => (
+                    <div className="reviews-star" key={index}>
+                      {star}
+                    </div>
+                  ))}
                 </div>
-                <p className="reviews-descr">
-                  {slide.descr}
-                </p>
-
+                <p className="reviews-descr">{slide.descr}</p>
               </div>
             </SwiperSlide>
           ))}
