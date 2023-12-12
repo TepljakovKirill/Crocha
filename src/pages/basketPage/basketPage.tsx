@@ -1,5 +1,14 @@
+import { Helmet } from "react-helmet-async";
+
 function BasketPage() {
-  return <div>Это страца заказов</div>;
+  return (
+    <>
+      <Helmet>
+        <title>Crocha - Корзина товаров</title>
+      </Helmet>
+      <div>Это страца заказов</div>;
+    </>
+  );
 }
 
 export default BasketPage;
