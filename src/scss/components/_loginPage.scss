@@ -1,0 +1,43 @@
+.authorization {
+    height: calc(100vh - 237px);
+    max-width: 600px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+    &-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        margin-top: 30px;
+        width: 300px;
+        flex-direction: column;
+        margin: 0 auto;
+
+        .field {
+            margin-top: 10px;
+    
+            label {
+                font-size: 12px;
+            }
+    
+            input {
+                width: 100%;
+                padding: 5px;
+                border: 2px solid $text-color;
+                border-radius: 4px;
+            }
+        }
+    
+        button {
+            margin-top: 20px;
+        }
+    }
+
+    .error {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
