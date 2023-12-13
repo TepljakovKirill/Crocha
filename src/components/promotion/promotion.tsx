@@ -10,7 +10,7 @@ function Promotion({ onViewProduct }: TPromotionProps) {
   const [cards, setCards] = React.useState<Array<Card>>([]);
 
   React.useEffect(() => {
-    fetch("https://6561a5f3dcd355c0832404d3.mockapi.io/card")
+    fetch("https://e5405e6585f75326.mokky.dev/card")
       .then((res) => res.json())
       .then((arr) => {
         setCards(arr);

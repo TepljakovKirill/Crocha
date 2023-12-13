@@ -31,6 +31,11 @@
                 margin-right: 17vmax;
             }
 
+            .entrance:hover path {
+                fill: #0077AA;
+                transition: 0.3s ease-in;
+            }
+
             .cart {
                 margin-top: 10px;
                 margin-right: 13px;

@@ -8,7 +8,7 @@ export const reviews = [
     rating: 3,
   },
   {
-    id: 1,
+    id: 2,
     img: "../../public/img/reviews-img/reviews-1.jpg",
     name: "Антонина Семёновна",
     descr:
@@ -16,7 +16,7 @@ export const reviews = [
     rating: 5,
   },
   {
-    id: 1,
+    id: 3,
     img: "../../public/img/reviews-img/reviews-1.jpg",
     name: "Вера Венеровна",
     descr:
@@ -24,7 +24,7 @@ export const reviews = [
     rating: 4,
   },
   {
-    id: 1,
+    id: 4,
     img: "../../public/img/reviews-img/reviews-1.jpg",
     name: "Василиса Семёновна",
     descr:
