@@ -2,7 +2,7 @@ import React from "react";
 import { FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
 
-function LoginPage() {
+function RegisterPage() {
   const [email, setEmail] = React.useState('');
   const [name, setName] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -28,9 +28,9 @@ function LoginPage() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        fullName: { name },
-        email: { email },
-        password: { password }
+        fullName: name,
+        email: email,
+        password: password
       })
     });
 
@@ -106,4 +106,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default RegisterPage;

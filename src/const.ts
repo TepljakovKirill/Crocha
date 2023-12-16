@@ -1,6 +1,7 @@
 export enum AppRoutes {
     Main = '/',
-    Login = '/login',
+    Register = '/register',
+    Authorization = '/authorization',
     // Favorites = '/favorites',
     BasketPage = '/Корзина',
     PaymentPage = '/Оплата',
