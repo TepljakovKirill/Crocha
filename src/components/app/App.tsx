@@ -1,6 +1,7 @@
+import React from "react";
 import { HelmetProvider } from "react-helmet-async";
 import PrivateRoute from "../privateRouter/privateRouter";
-import { AppRoutes, AuthorizationStatus } from "../../const";
+import { AppRoutes } from "../../const";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../layout/Layout";
 import HomePage from "../../pages/homePage/homePage";
@@ -11,20 +12,30 @@ import PaymentPage from "../../pages/paymentPage/paymentPage";
 import NotFoundPage from "../../pages/notFoundPage/notFoundPage";
 import "../../App.scss";
 
+
 function App() {
+  const [authorization, setAuthorization] = React.useState(false);
+
+  const onExitAuthorization = () => {
+    setAuthorization(false);
+  };
+
+  const onAuthorization = () => {
+    setAuthorization(!false);
+  };
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-          <Route path={AppRoutes.Main} element={<Layout />}>
+          <Route path={AppRoutes.Main} element={<Layout onExitAuthorization={onExitAuthorization} />}>
             <Route index element={<HomePage />} />
-            <Route path={AppRoutes.Authorization} element={<AuthorizationPage />} />
+            <Route path={AppRoutes.Authorization} element={<AuthorizationPage onAuthorization={onAuthorization} />} />
             <Route path={AppRoutes.Register} element={<RegisterPage />} />
             <Route
               path={AppRoutes.BasketPage}
               element={
                 <PrivateRoute
-                  restrictedFor={AuthorizationStatus.NoAuth}
+                  restrictedFor={authorization}
                   redirectTo={AppRoutes.Register}
                 >
                   <BasketPage />

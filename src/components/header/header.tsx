@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+type TonExitAuthorizationProps = {
+  onExitAuthorization: () => void;
+}
+
+function Header({ onExitAuthorization }: TonExitAuthorizationProps) {
   return (
     <header className="header">
       <div className="container">
@@ -20,6 +24,7 @@ function Header() {
             <Link to="/authorization">
               <svg className="entrance" width="25" height="25" viewBox="0 0 25 25"><path fill="#fff" d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z" /></svg>
             </Link>
+
             <Link to="/Корзина">
               <svg
                 className="cart"
@@ -73,8 +78,35 @@ function Header() {
                 />
               </svg>
             </Link>
-
-
+            <svg
+              onClick={onExitAuthorization}
+              className="exit"
+              x="0px" y="0px" width="24px" height="24px"
+              viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve">
+              <g>
+                <g>
+                  <g>
+                    <path d="M15,24H1c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1v7c0,0.6-0.4,1-1,1s-1-0.4-1-1V2H2v20h12v-6 c0-0.6,0.4-1,1-1s1,0.4,1,1v7C16,23.6,15.6,24,15,24z" />
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M23,13H8c-0.6,0-1-0.4-1-1s0.4-1,1-1h15c0.6,0,1,0.4,1,1S23.6,13,23,13z" />
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M23,13c-0.3,0-0.5-0.1-0.7-0.3l-4-4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l4,4c0.4,0.4,0.4,1,0,1.4C23.5,12.9,23.3,13,23,13z
+			              	"/>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M19,17c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l4-4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-4,4C19.5,16.9,19.3,17,19,17z" />
+                  </g>
+                </g>
+              </g>
+            </svg>
           </div>
         </div>
       </div>

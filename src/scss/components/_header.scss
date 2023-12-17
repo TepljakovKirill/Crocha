@@ -11,6 +11,7 @@
             justify-content: space-between;
 
             ul {
+                align-items: center;
 
                 li:first-child {
                     margin-right: 68px;
@@ -36,9 +37,19 @@
                 transition: 0.3s ease-in;
             }
 
+            .exit {
+                fill: #fff;
+                transition: 0.3s ease-in;
+                cursor: pointer;
+            }
+
+            .exit:hover {
+                fill: #0077AA;
+                transition: 0.3s ease-in;
+            }
+
             .cart {
                 margin-top: 10px;
-                margin-right: 13px;
                 transition: 0.3s ease-in;
             }
 

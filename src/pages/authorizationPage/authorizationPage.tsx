@@ -1,10 +1,16 @@
 import React from "react";
 import { FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
-function AuthorizationPage() {
+type TAuthorizationPageProps = {
+    onAuthorization: () => void;
+}
+
+function AuthorizationPage({ onAuthorization }: TAuthorizationPageProps) {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [happyShopping, setHappyShopping] = React.useState(false);
 
     const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -30,6 +36,8 @@ function AuthorizationPage() {
 
 
         if (res.ok) {
+            setHappyShopping(!false);
+            onAuthorization();
             const json = await res.json();
             console.log(json);
         }
@@ -79,9 +87,12 @@ function AuthorizationPage() {
                         </button>
                     </form>
 
-                    <h2 id="status" className="error">Приятных покупок;)</h2>
+                    <p className="authorization-register">
+                        Если вы ещё не зарегистрировались на нашем сайте,<br /> то вам <Link to="/register">сюда</Link>
+                    </p>
 
-                    <pre id="jsonPre"></pre>
+                    {happyShopping ? <h2 className="authorization-greetings">Приятных покупок;)</h2> : ""}
+
                 </div>
             </div>
         </>

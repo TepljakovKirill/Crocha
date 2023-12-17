@@ -1,8 +1,8 @@
-import { AppRoutes, AuthorizationStatus } from "../../const";
+import { AppRoutes } from "../../const";
 import { Navigate } from "react-router-dom";
 
 type TProtectedRouteProps = {
-  restrictedFor: AuthorizationStatus;
+  restrictedFor: boolean;
   redirectTo: AppRoutes;
   children: JSX.Element;
 };
@@ -12,11 +12,10 @@ function PrivateRoute({
   redirectTo,
   children,
 }: TProtectedRouteProps) {
-  const authorizationStatus = AuthorizationStatus.Auth;
-  return restrictedFor !== authorizationStatus ? (
-    <Navigate to={redirectTo} />
-  ) : (
+  return restrictedFor ? (
     children
+  ) : (
+    <Navigate to={redirectTo} />
   );
 }
 

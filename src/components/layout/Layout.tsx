@@ -3,10 +3,14 @@ import { Outlet } from "react-router-dom";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 
-function Layout() {
+type TonExitAuthorizationProps = {
+  onExitAuthorization: () => void;
+}
+
+function Layout({ onExitAuthorization }: TonExitAuthorizationProps) {
   return (
     <div className="wrap-content">
-      <Header />
+      <Header onExitAuthorization={onExitAuthorization} />
       <main>
         <Outlet />
       </main>

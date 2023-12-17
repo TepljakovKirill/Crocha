@@ -1,8 +1,10 @@
 import React from "react";
 import { FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 function RegisterPage() {
+  const [register, setRegister] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [name, setName] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -36,6 +38,7 @@ function RegisterPage() {
 
 
     if (res.ok) {
+      setRegister(!false)
       const json = await res.json();
       console.log(json);
     }
@@ -97,9 +100,8 @@ function RegisterPage() {
             </button>
           </form>
 
-          <h2 id="status" className="error">Не зарегистрирован!</h2>
+          {register ? <p className="authorization-status">Зарегистрирован!<br />Теперь <Link to="/authorization">войдите</Link> в магазин!</p> : ""}
 
-          <pre id="jsonPre"></pre>
         </div>
       </div>
     </>
