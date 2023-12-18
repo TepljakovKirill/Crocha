@@ -36,7 +36,7 @@ function App() {
               element={
                 <PrivateRoute
                   restrictedFor={authorization}
-                  redirectTo={AppRoutes.Register}
+                  redirectTo={AppRoutes.Authorization}
                 >
                   <BasketPage />
                 </PrivateRoute>

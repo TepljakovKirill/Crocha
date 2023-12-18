@@ -1,0 +1,137 @@
+.basket {
+    margin: 61px 0 60px;
+    padding: 25px 43px 29px 23px;
+    border: 1.5px solid $border-color;
+    border-radius: 30px;
+
+    &-total {
+        justify-content: space-between;
+
+        &__product {
+            width: 674px;
+            padding: 21px;
+            border: 1.5px solid $border-color;
+            border-radius: 30px;
+
+            .basket-total__title {
+                font-size: 24px;
+                font-family: "Montserrat-Bold";
+                margin-bottom: 29px;
+            }
+
+            .basket-total__card {
+                margin-bottom: 29px;
+                justify-content: space-between;
+                align-items: center;
+
+                .card-descr {
+                    margin-left: 31px;
+                    font-size: 14px;
+                    flex-direction: column;
+
+                    .card-price__block {
+                        margin-top: 17px;
+                        margin-bottom: 24px;
+                        font-size: 18px;
+
+
+                        .card-price__new {
+                            margin-right: 13px;
+                            font-family: "Montserrat-Bold";
+
+                        }
+
+                        .card-price__old {
+                            position: relative;
+                            color: #B7B6B6;
+                        }
+
+                        .card-price__old:before {
+                            content: '';
+                            position: absolute;
+                            top: 45%;
+                            left: -5px;
+                            z-index: 5;
+                            width: 60px;
+                            height: 1px;
+                            background: #B7B6B6;
+                        }
+                    }
+                }
+
+                .basket-total__counter {
+                    margin-right: 65px;
+                    width: 68px;
+                    height: 29px;
+                    padding: 6px 18px;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 5px;
+                    border: 1.5px solid $border-color;
+
+                    .counter-number {
+                        margin-right: 15px;
+                        font-size: 14px;
+                    }
+
+                    .counter-button {
+                        flex-direction: column;
+                        background-color: lightgray 50% / cover no-repeat;
+
+
+                        .button-arrow {
+                            justify-content: center;
+                            align-items: center;
+                            width: 18px;
+                            height: 10px;
+                            border: none;
+                        }
+
+                        .button-arrow:active {
+                            border: 0.5px solid $grey;
+                        }
+
+                        .button-arrow__img {
+                            width: 8px;
+                            height: 8px;
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        .basket-total__price {
+            height: 236px;
+            width: 457px;
+            padding: 21px;
+            border: 1.5px solid $border-color;
+            border-radius: 30px;
+
+            .basket-total__title {
+                font-size: 24px;
+                font-family: "Montserrat-Bold";
+                margin-bottom: 29px;
+            }
+
+            .basket-total__descr {
+                font-size: 14px;
+                margin-bottom: 24px;
+
+                .total-descr {
+                    margin-top: 17px;
+                }
+
+                .total-descr:not(:last-child) {
+                    margin-top: 0;
+                }
+            }
+
+            .basket-total__button {
+                margin: 0 auto;
+            }
+
+        }
+    }
+}
