@@ -23,6 +23,7 @@ function App() {
   const onAuthorization = () => {
     setAuthorization(!false);
   };
+
   return (
     <HelmetProvider>
       <BrowserRouter>

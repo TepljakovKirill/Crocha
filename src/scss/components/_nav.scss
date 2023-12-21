@@ -1,22 +1,52 @@
 .nav-wrap {
     padding: 0 145px;
 
-    nav {
+    .menu-nav {
+
         height: 108px;
         align-items: center;
 
         ul {
+
             width: 100%;
             justify-content: space-between;
 
-            a {
-                color: $text-color;
-                transition: 0.2s ease-in;
-            }
+            .menu-list {
+                position: relative;
 
-            a:hover {
-                color: #EDCC65;
-                transition: 0.2s ease-in;
+                .menu-link {
+                    position: relative;
+                    z-index: 30;
+                }
+
+                .submenu {
+                    padding-top: 60px;
+                    padding-left: 20px;
+                    width: 263px;
+                    position: absolute;
+                    top: -20px;
+                    left: -80px;
+                    font-size: 14px;
+                    border-radius: 20px;
+                    border: 1.5px solid #E2E2E2;
+                    background: #FFF;
+                    z-index: 20;
+
+                    .submenu-list {
+                        padding: 7px 0;
+                    }
+                }
+
+                a {
+                    display: block;
+                    color: $text-color;
+                    transition: 0.2s ease-in;
+                }
+
+                a:hover {
+                    color: #EDCC65;
+                    transition: 0.2s ease-in;
+                }
             }
         }
     }
