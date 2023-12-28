@@ -1,4 +1,5 @@
 import React from "react";
+
 import PromotionCard from "../promotionCard/promotionCard";
 import { Card } from "../../types/types";
 

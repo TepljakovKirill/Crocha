@@ -1,7 +1,12 @@
 import BasketCard from "../../components/basketCard/basketCard";
 import { Helmet } from "react-helmet-async";
 
-function BasketPage() {
+type TBasketPageProps = {
+  cartsArray: number[]
+}
+
+function BasketPage({ cartsArray }: TBasketPageProps) {
+  console.log(cartsArray.length);  // ПОЧЕМУ ЗДЕСЬ ДЛИНА = 1 ????
   return (
     <>
       <Helmet>
@@ -12,9 +17,14 @@ function BasketPage() {
           <div className="basket-total flex">
             <div className="basket-total__product">
               <div className="basket-total__title">Корзина заказа</div>
-              <BasketCard />
-              <BasketCard />
-              <BasketCard />
+              {
+                cartsArray.length === 0 ?
+                  cartsArray.map((product, index) => (
+                    <BasketCard key={index} product={product} />
+                  ))
+                  :
+                  <div>Пока ваша корзина пуста</div>
+              }
             </div>
             <div className="basket-total__price">
               <div className="basket-total__title">Итого: 1797 ₽</div>
