@@ -1,12 +1,16 @@
+
 import BasketCard from "../../components/basketCard/basketCard";
 import { Helmet } from "react-helmet-async";
 
-type TBasketPageProps = {
-  cartsArray: number[]
-}
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/slices/store";
 
-function BasketPage({ cartsArray }: TBasketPageProps) {
-  console.log(cartsArray.length);  // ПОЧЕМУ ЗДЕСЬ ДЛИНА = 1 ????
+
+
+function BasketPage() {
+
+  const carts = useSelector((state: RootState) => state.cart.carts);
+
   return (
     <>
       <Helmet>
@@ -18,12 +22,12 @@ function BasketPage({ cartsArray }: TBasketPageProps) {
             <div className="basket-total__product">
               <div className="basket-total__title">Корзина заказа</div>
               {
-                cartsArray.length === 0 ?
-                  cartsArray.map((product, index) => (
-                    <BasketCard key={index} product={product} />
-                  ))
-                  :
+                carts.length === 0 ?
                   <div>Пока ваша корзина пуста</div>
+                  :
+                  carts.map((product) => (
+                    <BasketCard key={product.id} product={product} />
+                  ))
               }
             </div>
             <div className="basket-total__price">

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface CartsState {
+type CartsState = {
     carts: number[],
 }
 
@@ -12,13 +12,14 @@ const cartSlice = createSlice({
     name: 'carts',
     initialState,
     reducers: {
-        addCartInArray(state, action) {
-
+        setCarts(state, action) {
+            state.carts.push(action.payload);
         }
     }
-
 })
 
-export const { addCartInArray } = cartSlice.actions;
+
+
+export const { setCarts } = cartSlice.actions;
 
 export default cartSlice.reducer;

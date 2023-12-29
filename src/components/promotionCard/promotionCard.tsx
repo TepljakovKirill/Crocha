@@ -1,11 +1,31 @@
 import { Card } from "../../types/types";
 
+import { useDispatch } from "react-redux";
+import { setCarts } from "../../redux/slices/cartSlice";
+
 type TPromotionCardProps = {
   card: Card;
   onViewProduct: (id: number) => void;
 };
 
+type TCardProps = {
+  id: number,
+  imageUrl: string,
+  title: string,
+  price: number,
+  oldPrice: number
+}
+
+
 function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
+  const dispatch = useDispatch();
+
+  const onClickButtonCart = ({ id, imageUrl, title, price, oldPrice }: TCardProps) => {
+    dispatch(setCarts({ id, imageUrl, title, price, oldPrice }))
+  }
+
+
+
   const { id, imageUrl, title, price, oldPrice, discount, discountValue } =
     card;
   return (
@@ -21,7 +41,7 @@ function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
           <button onClick={() => onViewProduct(id)} className="button-grey">
             Смотреть
           </button>
-          <button className="button-blue">В корзину</button>
+          <button onClick={() => onClickButtonCart({ id, imageUrl, title, price, oldPrice })} className="button-blue">В корзину</button>
         </div>
       </div>
       {discount ? (

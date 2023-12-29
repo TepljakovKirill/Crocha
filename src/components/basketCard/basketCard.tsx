@@ -1,8 +1,14 @@
 import CounterProduct from "../counterProduct/counterPrduct";
-import { Card } from "../../types/types";
+
+type TProductProps = {
+    imageUrl: string,
+    title: string,
+    price: number,
+    oldPrice: number
+}
 
 type TBasketCartProps = {
-    product: Card;
+    product: TProductProps
 }
 
 function BasketCard({ product }: TBasketCartProps) {

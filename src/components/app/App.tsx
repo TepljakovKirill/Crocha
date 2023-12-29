@@ -13,15 +13,11 @@ import PaymentPage from "../../pages/paymentPage/paymentPage";
 import NotFoundPage from "../../pages/notFoundPage/notFoundPage";
 import "../../App.scss";
 
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/slices/store";
-
 
 function App() {
   const [authorization, setAuthorization] = React.useState(false);
 
-  const carts = useSelector((state: RootState) => state.cart.carts);
-  const [cartsArray, setCartsArray] = React.useState([carts]);
+
 
   // const onClickButtonCart = (id:number) => {
   //   console.log(id);
@@ -50,7 +46,7 @@ function App() {
                   restrictedFor={authorization}
                   redirectTo={AppRoutes.Authorization}
                 >
-                  <BasketPage cartsArray={cartsArray} />
+                  <BasketPage />
                 </PrivateRoute>
               }
             />
