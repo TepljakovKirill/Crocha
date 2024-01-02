@@ -14,9 +14,9 @@ const cartSlice = createSlice({
     reducers: {
         setCarts(state, action) {
             state.carts.push(action.payload);
+            console.log(state.carts)
         },
         deleteCard(state, action) {
-
             state.carts = state.carts.filter(cart => cart.id !== action.payload)
         }
     }
