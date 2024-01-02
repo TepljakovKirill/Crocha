@@ -1,6 +1,10 @@
 import CounterProduct from "../counterProduct/counterPrduct";
 
+import { deleteCard } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+
 type TProductProps = {
+    id: number,
     imageUrl: string,
     title: string,
     price: number,
@@ -11,8 +15,17 @@ type TBasketCartProps = {
     product: TProductProps
 }
 
+
+
 function BasketCard({ product }: TBasketCartProps) {
-    const { imageUrl, title, price, oldPrice } = product;
+    const dispatch = useDispatch();
+
+    const removeCard = (id: number) => {
+        dispatch(deleteCard(id));
+    }
+
+    const { id, imageUrl, title, price, oldPrice } = product;
+
     return (
         <div className="basket-total__card flex">
             <div className="card-wrap flex">
@@ -27,6 +40,7 @@ function BasketCard({ product }: TBasketCartProps) {
                 </div>
             </div>
             <CounterProduct />
+            <button onClick={() => removeCard(id)} className="basket-button">&times;</button>
         </div>
     );
 }

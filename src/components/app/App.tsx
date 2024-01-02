@@ -17,12 +17,6 @@ import "../../App.scss";
 function App() {
   const [authorization, setAuthorization] = React.useState(false);
 
-
-
-  // const onClickButtonCart = (id:number) => {
-  //   console.log(id);
-  // }
-
   const onExitAuthorization = () => {
     setAuthorization(false);
   };

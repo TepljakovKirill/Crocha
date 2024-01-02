@@ -24,40 +24,73 @@
                 justify-content: space-between;
                 align-items: center;
 
-                .card-descr {
-                    margin-left: 31px;
-                    font-size: 14px;
-                    flex-direction: column;
+                .card-wrap {
+                    width: 420px;
+                    align-items: center;
 
-                    .card-price__block {
-                        margin-top: 17px;
-                        margin-bottom: 24px;
-                        font-size: 18px;
+                    img {
+                        width: 164px;
+                        height: 152px;
+                    }
+
+                    .card-descr {
+                        margin-left: 31px;
+                        font-size: 14px;
+                        flex-direction: column;
+
+                        .card-price__block {
+                            margin-top: 17px;
+                            margin-bottom: 24px;
+                            font-size: 18px;
 
 
-                        .card-price__new {
-                            margin-right: 13px;
-                            font-family: "Montserrat-Bold";
+                            .card-price__new {
+                                margin-right: 13px;
+                                font-family: "Montserrat-Bold";
 
-                        }
+                            }
 
-                        .card-price__old {
-                            position: relative;
-                            color: #B7B6B6;
-                        }
+                            .card-price__old {
+                                position: relative;
+                                color: #B7B6B6;
+                            }
 
-                        .card-price__old:before {
-                            content: '';
-                            position: absolute;
-                            top: 45%;
-                            left: -5px;
-                            z-index: 5;
-                            width: 60px;
-                            height: 1px;
-                            background: #B7B6B6;
+                            .card-price__old:before {
+                                content: '';
+                                position: absolute;
+                                top: 45%;
+                                left: -5px;
+                                z-index: 5;
+                                width: 60px;
+                                height: 1px;
+                                background: #B7B6B6;
+                            }
                         }
                     }
                 }
+
+                .basket-button {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 5px;
+                    border: 1.5px solid #eee;
+                    cursor: pointer;
+                    transition: 0.2s;
+                }
+
+                .basket-button:hover {
+                    background-color: #ee4949;
+                    transition: 0.2s;
+                }
+
+                .basket-button:active {
+                    background: #eee;
+                    transition: 0.15s;
+                }
+
+
+
+
 
                 .basket-total__counter {
                     margin-right: 65px;
