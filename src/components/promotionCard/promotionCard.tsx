@@ -2,6 +2,8 @@ import { Card } from "../../types/types";
 
 import { useDispatch } from "react-redux";
 import { setCarts } from "../../redux/slices/cartSlice";
+import { setTotalSumProduct } from "../../redux/slices/cartSlice";
+import { setDiscount } from "../../redux/slices/cartSlice";
 
 type TPromotionCardProps = {
   card: Card;
@@ -21,7 +23,9 @@ function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
   const dispatch = useDispatch();
 
   const onClickButtonCart = ({ id, imageUrl, title, price, oldPrice }: TCardProps) => {
-    dispatch(setCarts({ id, imageUrl, title, price, oldPrice }))
+    dispatch(setCarts({ id, imageUrl, title, price, oldPrice }));
+    dispatch(setTotalSumProduct(price));
+    dispatch(setDiscount(price));
   }
 
 

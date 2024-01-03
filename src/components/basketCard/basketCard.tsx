@@ -1,5 +1,7 @@
 import CounterProduct from "../counterProduct/counterPrduct";
 
+import { setDeleteDiscount } from "../../redux/slices/cartSlice";
+import { setTotalSumDeleteProduct } from "../../redux/slices/cartSlice";
 import { deleteCard } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 
@@ -22,6 +24,8 @@ function BasketCard({ product }: TBasketCartProps) {
 
     const removeCard = (id: number) => {
         dispatch(deleteCard(id));
+        dispatch(setTotalSumDeleteProduct(price));
+        dispatch(setDeleteDiscount(price));
     }
 
     const { id, imageUrl, title, price, oldPrice } = product;
@@ -34,7 +38,9 @@ function BasketCard({ product }: TBasketCartProps) {
                     <p className="card-title">{title}</p>
                     <div className="card-price__block flex">
                         <p className="card-price__new">{price} ₽</p>
-                        <p className="card-price__old">{oldPrice} ₽</p>
+                        {
+                            oldPrice > 0 ? <p className="card-price__old">{oldPrice} ₽</p> : " "
+                        }
                     </div>
                     <p className="card-weight">Вес посылки 400 г.</p>
                 </div>

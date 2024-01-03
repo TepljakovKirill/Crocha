@@ -167,4 +167,108 @@
 
         }
     }
+
+    .basket-order {
+        margin-top: 50px;
+        margin-left: 21px;
+        margin-right: 21px;
+
+        .order-hr {
+            margin-top: 40px;
+            width: 100%;
+            height: 1px;
+            background-color: #eee;
+        }
+
+
+        &__title {
+            margin-top: 38px;
+            font-size: 24px;
+            font-family: "Montserrat-Bold";
+            margin-bottom: 29px;
+        }
+
+        &__form {
+            .order-input__group {
+                width: 263px;
+                flex-direction: column;
+
+                input,
+                textarea {
+                    padding: 10px 8px;
+                    font-size: 14px;
+                    color: #eee;
+                    border-radius: 5px;
+                    border: 1.5px solid #EEE;
+                    background: #FFF;
+                }
+
+                textarea {
+                    width: 263px;
+                    height: 71px;
+                    resize: none;
+                }
+
+                input::placeholder {
+                    color: #eee;
+                }
+
+                textarea::placeholder {
+                    color: #eee;
+                }
+
+                input:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+
+            .order-form__method {
+                margin-top: 26px;
+                align-items: center;
+
+                .method-title {
+                    font-size: 14px;
+                    font-family: "Montserrat-Bold";
+                }
+
+                input {
+                    border: 1px solid #c4c4c4;
+                    margin-left: 70px;
+                    margin-right: 15px;
+                }
+            }
+
+            .basket-total__order {
+                margin-top: 30px;
+                align-items: center;
+
+                .total-sum {
+                    margin-bottom: 17px;
+                }
+
+                .total-sum__finish {
+                    font-family: "Montserrat-Bold";
+                }
+
+                .total-button {
+                    margin-left: 130px;
+
+                    .total {
+                        width: 166px;
+                        height: 41px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .total:first-child {
+                        margin-right: 32px;
+                    }
+
+                }
+
+            }
+        }
+
+    }
 }
