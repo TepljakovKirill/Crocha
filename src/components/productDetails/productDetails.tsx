@@ -37,18 +37,16 @@ function ProductDetails({
             </div>
             <div className="product-block__line"></div>
 
-            <form method="post">
-              <select
-                value={selectedSize}
-                onChange={(e) => setSelectedSize(e.target.value)}
-                name="selectSize"
-                className="product-select"
-              >
-                <option value="size-1">Размер 1</option>
-                <option value="size-2">Размер 2</option>
-                <option value="size-3">Размер 3</option>
-              </select>
-            </form>
+            <select
+              value={selectedSize}
+              onChange={(e) => setSelectedSize(e.target.value)}
+              name="selectSize"
+              className="product-select"
+            >
+              <option value="size-1">Размер 1</option>
+              <option value="size-2">Размер 2</option>
+              <option value="size-3">Размер 3</option>
+            </select>
 
             <button className="product-button">В корзину</button>
             <div className="product-description">
