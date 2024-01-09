@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 type CartsState = {
     carts: number[],
     discount: number,
+    totalSumArray: number[],
     totalSumProduct: number,
     totalSumOrder: number
 }
@@ -10,6 +11,7 @@ type CartsState = {
 const initialState: CartsState = {
     carts: [],
     discount: 0,
+    totalSumArray: [],
     totalSumProduct: 0,
     totalSumOrder: 0
 
@@ -25,11 +27,18 @@ const cartSlice = createSlice({
         deleteCard(state, action) {
             state.carts = state.carts.filter(cart => cart.id !== action.payload)
         },
+        // setTotalSumProduct(state, action) {
+        //     state.totalSumProduct += action.payload;
+        // },
+
         setTotalSumProduct(state, action) {
-            state.totalSumProduct += action.payload;
+            state.totalSumArray.push(action.payload);
+            state.totalSumProduct = state.totalSumArray.reduce((a, b) => a + b, 0);
         },
-        setTotalSumDeleteProduct(state, action) {
-            state.totalSumProduct -= action.payload;
+
+        setTotalSumDeleteProduct(state) {
+            state.totalSumArray.pop();
+            state.totalSumProduct = state.totalSumArray.reduce((a, b) => a + b, 0);
         },
         setDiscount(state, action) {
             state.discount += action.payload;

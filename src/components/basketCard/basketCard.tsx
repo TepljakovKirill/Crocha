@@ -1,9 +1,11 @@
-import CounterProduct from "../counterProduct/counterPrduct";
+import React from "react";
 
 import { setDeleteDiscount } from "../../redux/slices/cartSlice";
+import { setTotalSumProduct } from "../../redux/slices/cartSlice";
 import { setTotalSumDeleteProduct } from "../../redux/slices/cartSlice";
 import { deleteCard } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
+
 
 type TProductProps = {
     id: number,
@@ -22,13 +24,27 @@ type TBasketCartProps = {
 function BasketCard({ product }: TBasketCartProps) {
     const dispatch = useDispatch();
 
-    const removeCard = (id: number) => {
-        dispatch(deleteCard(id));
-        dispatch(setTotalSumDeleteProduct(price));
-        dispatch(setDeleteDiscount(price));
+    const { id, imageUrl, title, price, oldPrice } = product;
+
+    const [count, setCount] = React.useState(1);
+
+    function increment() {
+        setCount(count + 1);
+        dispatch(setTotalSumProduct(price));
     }
 
-    const { id, imageUrl, title, price, oldPrice } = product;
+    function decrement() {
+        if (count >= 2) {
+            setCount(count - 1);
+            dispatch(setTotalSumDeleteProduct());
+        }
+    }
+
+    const removeCard = (id: number) => {
+        dispatch(deleteCard(id));
+        // dispatch(setTotalSumDeleteProduct(price));
+        dispatch(setDeleteDiscount(price));
+    }
 
     return (
         <div className="basket-total__card flex">
@@ -37,7 +53,7 @@ function BasketCard({ product }: TBasketCartProps) {
                 <div className="card-descr flex">
                     <p className="card-title">{title}</p>
                     <div className="card-price__block flex">
-                        <p className="card-price__new">{price} ₽</p>
+                        <p className="card-price__new">{price * count} ₽</p>
                         {
                             oldPrice > 0 ? <p className="card-price__old">{oldPrice} ₽</p> : " "
                         }
@@ -45,7 +61,13 @@ function BasketCard({ product }: TBasketCartProps) {
                     <p className="card-weight">Вес посылки 400 г.</p>
                 </div>
             </div>
-            <CounterProduct />
+            <div className="basket-total__counter flex">
+                <p className="counter-number">{count}</p>
+                <div className="counter-button flex">
+                    <button onClick={increment} className="button-arrow flex"><img className="button-arrow__img" src="../../../public/img/arrow-top.png" alt="стрелка вверх" /></button>
+                    <button onClick={decrement} className="button-arrow flex"><img className="button-arrow__img" src="../../../public/img/arrow-bottom.png" alt="стрелка вниз" /></button>
+                </div>
+            </div>
             <button onClick={() => removeCard(id)} className="basket-button">&times;</button>
         </div>
     );

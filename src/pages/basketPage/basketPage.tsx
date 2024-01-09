@@ -18,6 +18,10 @@ function BasketPage() {
   discount >= 3000 ? discountPrice = 360 : discountPrice = 0;
 
   const totalSumProduct = useSelector((state: RootState) => state.cart.totalSumProduct);
+  const totalSumArray = useSelector((state: RootState) => state.cart.totalSumArray);
+
+  console.log(totalSumProduct);
+  console.log(totalSumArray);
 
   return (
     <>
