@@ -1,8 +1,6 @@
-import { setDeleteDiscount } from "../../redux/slices/cartSlice";
 import { increment } from "../../redux/slices/cartSlice";
 import { decrement } from "../../redux/slices/cartSlice";
 import { deleteCard } from "../../redux/slices/cartSlice";
-// import { setTotalSumDeleteProduct } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 
 type TProductProps = {
@@ -18,11 +16,6 @@ type TBasketCartProps = {
   product: TProductProps;
 };
 
-type TRemoveCardProps = {
-  id: number;
-  price: number;
-};
-
 function BasketCard({ product }: TBasketCartProps) {
   const dispatch = useDispatch();
 
@@ -33,13 +26,11 @@ function BasketCard({ product }: TBasketCartProps) {
   };
 
   const onClickMinus = () => {
-    dispatch(decrement(id));
+    dispatch(decrement({ id, price }));
   };
 
-  const removeCard = ({ id, price }: TRemoveCardProps) => {
+  const removeCard = (id: number) => {
     dispatch(deleteCard(id));
-    // dispatch(setTotalSumDeleteProduct(price));
-    dispatch(setDeleteDiscount(price));
   };
 
   return (
@@ -78,10 +69,7 @@ function BasketCard({ product }: TBasketCartProps) {
           </button>
         </div>
       </div>
-      <button
-        onClick={() => removeCard({ id, price })}
-        className="basket-button"
-      >
+      <button onClick={() => removeCard(id)} className="basket-button">
         &times;
       </button>
     </div>

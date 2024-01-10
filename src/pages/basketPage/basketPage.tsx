@@ -8,21 +8,13 @@ import { RootState } from "../../redux/slices/store";
 function BasketPage() {
   const carts = useSelector((state: RootState) => state.cart.carts);
   const totalProduct = carts.length;
-  const discount = useSelector((state: RootState) => state.cart.discount);
-
-  let discountPrice;
-  discount >= 3000 ? (discountPrice = 360) : (discountPrice = 0);
 
   const totalSumProduct = useSelector(
     (state: RootState) => state.cart.totalSumProduct
   );
-  const totalSumArray = useSelector(
-    (state: RootState) => state.cart.totalSumArray
-  );
 
-  console.log(totalSumProduct);
-  console.log(totalSumArray);
-  console.log(carts);
+  let discountPrice;
+  totalSumProduct >= 3000 ? (discountPrice = 360) : (discountPrice = 0);
 
   return (
     <>
