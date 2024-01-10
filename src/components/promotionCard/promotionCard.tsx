@@ -1,5 +1,5 @@
 import { Card } from "../../types/types";
-
+import { setDiscount } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { setCarts } from "../../redux/slices/cartSlice";
 
@@ -27,6 +27,7 @@ function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
     oldPrice,
   }: TCardProps) => {
     dispatch(setCarts({ id, imageUrl, title, price, oldPrice }));
+    dispatch(setDiscount());
   };
 
   const { id, imageUrl, title, price, oldPrice, discount, discountValue } =

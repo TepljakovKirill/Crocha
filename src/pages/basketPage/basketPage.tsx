@@ -1,7 +1,6 @@
 import BasketCard from "../../components/basketCard/basketCard";
 import BusketOrder from "../../components/basketOrder/basketOrder";
 import { Helmet } from "react-helmet-async";
-
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/slices/store";
 
@@ -13,8 +12,7 @@ function BasketPage() {
     (state: RootState) => state.cart.totalSumProduct
   );
 
-  let discountPrice;
-  totalSumProduct >= 3000 ? (discountPrice = 360) : (discountPrice = 0);
+  const discount = useSelector((state: RootState) => state.cart.discount);
 
   return (
     <>
@@ -40,7 +38,7 @@ function BasketPage() {
               </div>
               <div className="basket-total__descr">
                 <p className="total-descr">{totalProduct} товара</p>
-                <p className="total-descr">Сумма скидки: {discountPrice} ₽</p>
+                <p className="total-descr">Сумма скидки: {discount} ₽</p>
               </div>
               <button className="basket-total__button button-blue flex">
                 Оформить заказ

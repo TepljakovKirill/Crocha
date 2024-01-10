@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/slices/store";
 
@@ -5,9 +6,19 @@ function BusketOrder() {
   const totalSumProduct = useSelector(
     (state: RootState) => state.cart.totalSumProduct
   );
-  const totalSumOrder = useSelector(
-    (state: RootState) => state.cart.totalSumOrder
-  );
+  const discount = useSelector((state: RootState) => state.cart.discount);
+
+  const [checked, setChecked] = React.useState("");
+
+  function chengeValue(event: React.ChangeEvent<HTMLInputElement>) {
+    setChecked(event.target.value);
+  }
+
+  let totalSumOrder = totalSumProduct - discount;
+
+  if (checked === "Доставка" && totalSumOrder > 0) {
+    totalSumOrder += 500;
+  }
 
   return (
     <div className="basket-order">
@@ -24,19 +35,33 @@ function BusketOrder() {
         <div className="order-form__method flex">
           <p className="method-title">Способ полуения:</p>
           <label>
-            <input type="radio" name="delyvery" value="Доставка" />
+            <input
+              type="radio"
+              name="delyvery"
+              value="Доставка"
+              onChange={chengeValue}
+            />
             Доставка
           </label>
           <label>
-            <input type="radio" name="delyvery" value="Забрать в магазине" />
+            <input
+              type="radio"
+              name="delyvery"
+              value="Забрать в магазине"
+              onChange={chengeValue}
+            />
             Забрать в магазине
           </label>
         </div>
         <div className="order-hr"></div>
         <div className="basket-total__order flex">
           <div className="total-block">
-            <p className="total-sum">Сумма заказа: {totalSumProduct} ₽</p>
-            <p className="total-sum">Доставка: 500 ₽</p>
+            <p className="total-sum">Сумма заказа: {totalSumOrder} ₽</p>
+            {checked === "Доставка" ? (
+              <p className="total-sum">Доставка: 500 ₽</p>
+            ) : (
+              ""
+            )}
             <p className="total-sum__finish">Итого: {totalSumOrder} ₽</p>
           </div>
           <div className="total-button flex">

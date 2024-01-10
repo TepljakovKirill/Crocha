@@ -1,3 +1,4 @@
+import { setDiscount } from "../../redux/slices/cartSlice";
 import { increment } from "../../redux/slices/cartSlice";
 import { decrement } from "../../redux/slices/cartSlice";
 import { deleteCard } from "../../redux/slices/cartSlice";
@@ -23,14 +24,17 @@ function BasketCard({ product }: TBasketCartProps) {
 
   const onClickPlus = () => {
     dispatch(increment(id));
+    dispatch(setDiscount());
   };
 
   const onClickMinus = () => {
     dispatch(decrement({ id, price }));
+    dispatch(setDiscount());
   };
 
   const removeCard = (id: number) => {
     dispatch(deleteCard(id));
+    dispatch(setDiscount());
   };
 
   return (

@@ -4,14 +4,12 @@ type CartsState = {
   carts: number[];
   discount: number;
   totalSumProduct: number;
-  totalSumOrder: number;
 };
 
 const initialState: CartsState = {
   carts: [],
   discount: 0,
   totalSumProduct: 0,
-  totalSumOrder: 0,
 };
 
 const cartSlice = createSlice({
@@ -59,9 +57,16 @@ const cartSlice = createSlice({
         return obj.price * obj.count + sum;
       }, 0);
     },
+
+    setDiscount(state) {
+      state.totalSumProduct >= 3000
+        ? (state.discount = 360)
+        : (state.discount = 0);
+    },
   },
 });
 
-export const { setCarts, increment, decrement, deleteCard } = cartSlice.actions;
+export const { setCarts, increment, decrement, deleteCard, setDiscount } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
