@@ -7,6 +7,7 @@ import { RootState } from "../../redux/slices/store";
 function BasketPage() {
   const carts = useSelector((state: RootState) => state.cart.carts);
   const totalProduct = carts.length;
+  console.log(carts)
 
   const totalSumProduct = useSelector(
     (state: RootState) => state.cart.totalSumProduct

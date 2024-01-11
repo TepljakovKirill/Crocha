@@ -8,7 +8,7 @@ type TPromotionCardProps = {
   onViewProduct: (id: number) => void;
 };
 
-type TCardProps = {
+export type TCardProps = {
   id: number;
   imageUrl: string;
   title: string;

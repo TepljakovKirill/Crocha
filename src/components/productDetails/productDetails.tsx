@@ -1,6 +1,10 @@
 import React from "react";
 import Reviews from "../reviews/reviews";
 import { Card } from "../../types/types";
+import { TCardProps } from "../promotionCard/promotionCard";
+import { useDispatch } from "react-redux";
+import { setCarts } from "../../redux/slices/cartSlice";
+import { setDiscount } from "../../redux/slices/cartSlice";
 
 type TProductDetailsProps = {
   onCloseProduct: () => void;
@@ -13,10 +17,23 @@ function ProductDetails({
   cardId,
   detailsProduct,
 }: TProductDetailsProps) {
+  const dispatch = useDispatch();
+
   const [selectedSize, setSelectedSize] = React.useState("Размер 1");
   const arrayDetail = detailsProduct[cardId - 1];
 
-  const { imageUrl, title, price, oldPrice } = arrayDetail;
+  const { id, imageUrl, title, price, oldPrice } = arrayDetail;
+
+  const onClickButtonCart = ({
+    id,
+    imageUrl,
+    title,
+    price,
+    oldPrice,
+  }: TCardProps) => {
+    dispatch(setCarts({ id, imageUrl, title, price, oldPrice }));
+    dispatch(setDiscount());
+  };
 
   return (
     <div className="overlay">
@@ -48,7 +65,10 @@ function ProductDetails({
               <option value="size-3">Размер 3</option>
             </select>
 
-            <button className="product-button">В корзину</button>
+            <button className="product-button"
+              onClick={() => onClickButtonCart({ id, imageUrl, title, price, oldPrice })}>
+              В корзину
+            </button>
             <div className="product-description">
               <p className="product-description__title">Описание:</p>
               <p className="product-description__descr">
