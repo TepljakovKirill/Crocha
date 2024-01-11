@@ -37,6 +37,20 @@
                 transition: 0.3s ease-in;
             }
 
+            .basket-wrap {
+                position: relative;
+
+                .countProduct {
+                    position: absolute;
+                    top: 2px;
+                    right: 3px;
+                    padding: 1px 7px;
+                    font-size: 12px;
+                    border-radius: 50%;
+                    background-color: #EDCC65;
+                }
+            }
+
             .exit {
                 fill: #fff;
                 transition: 0.3s ease-in;
