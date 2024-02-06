@@ -7,7 +7,6 @@
         align-items: center;
 
         ul {
-
             width: 100%;
             justify-content: space-between;
 
@@ -21,6 +20,7 @@
 
                 .submenu {
                     padding-top: 60px;
+                    padding-bottom: 40px;
                     padding-left: 20px;
                     width: 263px;
                     position: absolute;
@@ -31,22 +31,46 @@
                     border: 1.5px solid #E2E2E2;
                     background: #FFF;
                     z-index: 20;
+                    transition: 0.1s ease;
+                    display: none;
 
                     .submenu-list {
-                        padding: 7px 0;
+                        border-left: 2px solid #E2E2E2;
+                        transition: 0.1s ease-in;
+
+                        a {
+                            display: block;
+                            padding: 7px 11px;
+                            color: $text-color;
+                            transition: 0.1s ease-in;
+                        }
+
+                        a:hover {
+                            margin-left: -3px;
+                            border-left: 4px solid #9ECDD6;
+                            font-weight: bold;
+                            transition: 0.1s ease-in;
+
+                        }
+
                     }
+
                 }
 
                 a {
-                    display: block;
                     color: $text-color;
-                    transition: 0.2s ease-in;
+                    transition: 0.1s ease-in;
                 }
 
-                a:hover {
-                    color: #EDCC65;
-                    transition: 0.2s ease-in;
-                }
+            }
+
+            .menu-list:hover .menu-link {
+                font-weight: bold;
+            }
+
+            .menu-list:hover .submenu {
+                transition: 0.2s ease-in;
+                display: block;
             }
         }
     }

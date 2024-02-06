@@ -8,16 +8,16 @@ function Nav() {
           <ul className="flex">
             <li className="menu-list"><a className="menu-link" href="#">Одежда</a>
               <ul className="submenu">
-                <li className="submenu-list"><a href="">Футболки</a></li>
-                <li className="submenu-list"><a href="">Брюки,джинсы,шорты</a></li>
-                <li className="submenu-list"><a href="">Рубашка,блузки</a></li>
-                <li className="submenu-list"><a href="">Толстовки</a></li>
-                <li className="submenu-list"><a href="">Леггинсы</a></li>
-                <li className="submenu-list"><a href="">Платья</a></li>
-                <li className="submenu-list"><a href="">Куртки,пальто,пиджаки</a></li>
-                <li className="submenu-list"><a href="">Свитеры</a></li>
-                <li className="submenu-list"><a href="">Юбки</a></li>
-                <li className="submenu-list"><a href="">Комплекты</a></li>
+                <li className="submenu-list"><a href="#">Футболки</a></li>
+                <li className="submenu-list"><a href="#">Брюки,джинсы,шорты</a></li>
+                <li className="submenu-list"><a href="#">Рубашка,блузки</a></li>
+                <li className="submenu-list"><a href="#">Толстовки</a></li>
+                <li className="submenu-list"><a href="#">Леггинсы</a></li>
+                <li className="submenu-list"><a href="#">Платья</a></li>
+                <li className="submenu-list"><a href="#">Куртки,пальто,пиджаки</a></li>
+                <li className="submenu-list"><a href="#">Свитеры</a></li>
+                <li className="submenu-list"><a href="#">Юбки</a></li>
+                <li className="submenu-list"><a href="#">Комплекты</a></li>
               </ul>
             </li>
             <li className="menu-list"><a className="menu-link" href="#">Обувь</a>
