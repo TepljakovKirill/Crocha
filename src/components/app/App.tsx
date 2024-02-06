@@ -10,6 +10,7 @@ import AuthorizationPage from "../../pages/authorizationPage/authorizationPage";
 import RegisterPage from "../../pages/registerPage/registerPage";
 import BasketPage from "../../pages/basketPage/basketPage";
 import PaymentPage from "../../pages/paymentPage/paymentPage";
+import Categories from "../../pages/categories/categories";
 import NotFoundPage from "../../pages/notFoundPage/notFoundPage";
 import "../../App.scss";
 
@@ -44,6 +45,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path={AppRoutes.Categories} element={<Categories />} />
             <Route path={AppRoutes.PaymentPage} element={<PaymentPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

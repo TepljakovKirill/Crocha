@@ -1,4 +1,7 @@
-
+import { Link } from "react-router-dom";
+import { menuСloth } from "../../const";
+import { menuShoes } from '../../const';
+import { menuAccessories } from '../../const';
 
 function Nav() {
   return (
@@ -6,34 +9,28 @@ function Nav() {
       <div className="nav-wrap">
         <nav className="menu-nav flex">
           <ul className="flex">
-            <li className="menu-list"><a className="menu-link" href="#">Одежда</a>
+            <li className="menu-list"><Link to="/categories" className="menu-link">Одежда</Link>
               <ul className="submenu">
-                <li className="submenu-list"><a href="#">Футболки</a></li>
-                <li className="submenu-list"><a href="#">Брюки,джинсы,шорты</a></li>
-                <li className="submenu-list"><a href="#">Рубашка,блузки</a></li>
-                <li className="submenu-list"><a href="#">Толстовки</a></li>
-                <li className="submenu-list"><a href="#">Леггинсы</a></li>
-                <li className="submenu-list"><a href="#">Платья</a></li>
-                <li className="submenu-list"><a href="#">Куртки,пальто,пиджаки</a></li>
-                <li className="submenu-list"><a href="#">Свитеры</a></li>
-                <li className="submenu-list"><a href="#">Юбки</a></li>
-                <li className="submenu-list"><a href="#">Комплекты</a></li>
+                {menuСloth.map((link) => (
+                  <li className="submenu-list"><Link to="/categories">{link}</Link></li>
+                ))}
               </ul>
             </li>
-            <li className="menu-list"><a className="menu-link" href="#">Обувь</a>
+            <li className="menu-list"><Link to="/categories" className="menu-link">Обувь</Link>
               <ul className="submenu">
-                <li className="submenu-list"><a href="">Кроссовки</a></li>
-                <li className="submenu-list"><a href="">Ботинки</a></li>
-                <li className="submenu-list"><a href="">Тапочки</a></li>
+                {menuShoes.map((link) => (
+                  <li className="submenu-list"><Link to="/categories">{link}</Link></li>
+                ))}
               </ul>
             </li>
-            <li className="menu-list"><a className="menu-link" href="#">Аксессуары</a>
+            <li className="menu-list"><Link to="/categories" className="menu-link">Аксессуары</Link>
               <ul className="submenu">
-                <li className="submenu-list"><a href="">Заколки,резинки</a></li>
-                <li className="submenu-list"><a href="">Бижутерия</a></li>
+                {menuAccessories.map((link) => (
+                  <li className="submenu-list"><Link to="/categories">{link}</Link></li>
+                ))}
               </ul>
             </li>
-            <li className="menu-list"><a className="menu-link" href="#">Скидки</a></li>
+            <li className="menu-list"><a className="menu-link" href="/categories">Скидки</a></li>
           </ul>
         </nav>
       </div>
