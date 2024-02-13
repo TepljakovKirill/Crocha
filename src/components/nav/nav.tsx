@@ -11,22 +11,22 @@ function Nav() {
           <ul className="flex">
             <li className="menu-list"><Link to="/categories" className="menu-link">Одежда</Link>
               <ul className="submenu">
-                {menuСloth.map((link) => (
-                  <li className="submenu-list"><Link to="/categories">{link}</Link></li>
+                {menuСloth.map((link, i) => (
+                  <li key={i} className="submenu-list"><Link to="/categories">{link}</Link></li>
                 ))}
               </ul>
             </li>
             <li className="menu-list"><Link to="/categories" className="menu-link">Обувь</Link>
               <ul className="submenu">
-                {menuShoes.map((link) => (
-                  <li className="submenu-list"><Link to="/categories">{link}</Link></li>
+                {menuShoes.map((link, i) => (
+                  <li key={i} className="submenu-list"><Link to="/categories">{link}</Link></li>
                 ))}
               </ul>
             </li>
             <li className="menu-list"><Link to="/categories" className="menu-link">Аксессуары</Link>
               <ul className="submenu">
-                {menuAccessories.map((link) => (
-                  <li className="submenu-list"><Link to="/categories">{link}</Link></li>
+                {menuAccessories.map((link, i) => (
+                  <li key={i} className="submenu-list"><Link to="/categories">{link}</Link></li>
                 ))}
               </ul>
             </li>

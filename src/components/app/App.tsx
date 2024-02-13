@@ -10,7 +10,7 @@ import AuthorizationPage from "../../pages/authorizationPage/authorizationPage";
 import RegisterPage from "../../pages/registerPage/registerPage";
 import BasketPage from "../../pages/basketPage/basketPage";
 import PaymentPage from "../../pages/paymentPage/paymentPage";
-import Categories from "../../pages/categories/categories";
+import Categories from "../../pages/categoriesPage/categoriesPage";
 import NotFoundPage from "../../pages/notFoundPage/notFoundPage";
 import "../../App.scss";
 

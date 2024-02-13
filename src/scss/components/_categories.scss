@@ -1,0 +1,135 @@
+.categories-block {
+    justify-content: space-between;
+
+    .categories {
+        padding: 40px 0;
+
+        .submenu {
+            padding-bottom: 40px;
+            padding-left: 20px;
+            width: 263px;
+            font-size: 14px;
+            border-radius: 20px;
+            border: 1.5px solid #E2E2E2;
+            background: #FFF;
+            z-index: 20;
+            transition: 0.1s ease;
+
+            h2 {
+                padding-top: 25px;
+                padding-bottom: 25px;
+                padding-left: 15px;
+                font-family: "Montserrat-Bold";
+                font-size: 24px;
+            }
+
+
+            .submenu-list {
+                display: block;
+                padding: 7px 11px;
+                color: $text-color;
+                border-left: 2px solid #E2E2E2;
+                cursor: pointer;
+                transition: 0.1s ease-in;
+            }
+
+            .submenu-list:hover {
+                margin-left: -1px;
+                border-left: 4px solid #9ECDD6;
+                font-weight: bold;
+                transition: 0.1s ease-in;
+
+            }
+
+            .active {
+                margin-left: -1px;
+                border-left: 4px solid #9ECDD6;
+                font-weight: bold;
+                transition: 0.1s ease-in;
+            }
+
+        }
+
+    }
+
+    .productBlock {
+        padding: 40px 0;
+
+        .cards-block {
+            width: 100%;
+            margin-left: 30px;
+            padding: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border: 1.5px solid #E2E2E2;
+            border-radius: 20px;
+
+            .promotion-card {
+                position: relative;
+                margin-bottom: 25px;
+                width: 262px;
+                border-radius: 20px;
+                border: 1.5px solid #E5E5E5;
+                background: #FFF;
+                overflow: hidden;
+
+                .card-descr {
+                    padding: 15px 17px 17px 15px;
+
+                    p {
+                        font-size: 14px;
+                        color: $text-color;
+                    }
+
+                    .card-price__block {
+                        margin-top: 7px;
+                        justify-content: left;
+                        align-items: center;
+
+
+                        .card-price {
+                            font-family: "Montserrat-Bold";
+                            margin-right: 15px;
+                            font-size: 18px;
+                        }
+
+                        .card-price__old {
+                            padding: 0 7px;
+                            font-size: 18px;
+                            position: relative;
+                        }
+
+                        .card-price__old:before {
+                            content: '';
+                            position: absolute;
+                            top: 45%;
+                            left: 0;
+                            z-index: 5;
+                            width: 60px;
+                            height: 1px;
+                            background: $text-color;
+                        }
+                    }
+
+                    .card-button__block {
+                        margin-top: 17px;
+                        justify-content: space-between;
+                    }
+                }
+
+                .promotion-card--discount {
+                    position: absolute;
+                    top: 12px;
+                    right: 17px;
+                    font-size: 14px;
+                    color: $white;
+                    padding: 5px;
+                    border-radius: 5px;
+                    background: $discount-color;
+                }
+
+            }
+        }
+    }
+}
