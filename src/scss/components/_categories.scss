@@ -53,6 +53,7 @@
     }
 
     .productBlock {
+        width: 100%;
         padding: 40px 0;
 
         .cards-block {
@@ -60,10 +61,17 @@
             margin-left: 30px;
             padding: 25px;
             display: flex;
+            align-items: center;
             flex-wrap: wrap;
             justify-content: space-between;
             border: 1.5px solid #E2E2E2;
             border-radius: 20px;
+
+            .cards-no {
+                text-align: center;
+                width: 100%;
+                font-family: "Montserrat-Bold";
+            }
 
             .promotion-card {
                 position: relative;

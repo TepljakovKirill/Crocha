@@ -46,15 +46,17 @@ function Categories() {
                     <div className="categories">
                         <CateoriesMenu activeLink={activeLink} onClickLink={onClickLink} />
                     </div>
-                    <div className="productBlock">
+                    <div className="productBlock flex">
                         <div className="cards-block">
-                            {cards.map((card) => (
-                                <PromotionCard
-                                    card={card}
-                                    key={card.id}
-                                // onViewProduct={onViewProduct}
-                                />
-                            ))}
+                            {(cards.length > 0) ?
+                                cards.map((card) => (
+                                    <PromotionCard
+                                        card={card}
+                                        key={card.id}
+                                    // onViewProduct={onViewProduct}
+                                    />
+                                )) :
+                                <div className="cards-no">Товар отсутствует. Приносим свои извинения</div>}
                         </div>
 
                     </div>
