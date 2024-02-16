@@ -5,7 +5,6 @@ import { setCarts } from "../../redux/slices/cartSlice";
 
 type TPromotionCardProps = {
   card: Card;
-  onViewProduct: (id: number) => void;
 };
 
 export type TCardProps = {
@@ -16,7 +15,7 @@ export type TCardProps = {
   oldPrice: number;
 };
 
-function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
+function PromotionCard({ card }: TPromotionCardProps) {
   const dispatch = useDispatch();
 
   const onClickButtonCart = ({
@@ -42,9 +41,7 @@ function PromotionCard({ card, onViewProduct }: TPromotionCardProps) {
           {oldPrice > 0 ? <p className="card-price__old">{oldPrice} ₽</p> : " "}
         </div>
         <div className="card-button__block flex">
-          <button onClick={() => onViewProduct(id)} className="button-grey">
-            Смотреть
-          </button>
+          <button className="button-grey">Смотреть</button>
           <button
             onClick={() =>
               onClickButtonCart({ id, imageUrl, title, price, oldPrice })

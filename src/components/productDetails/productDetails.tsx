@@ -65,8 +65,12 @@ function ProductDetails({
               <option value="size-3">Размер 3</option>
             </select>
 
-            <button className="product-button"
-              onClick={() => onClickButtonCart({ id, imageUrl, title, price, oldPrice })}>
+            <button
+              className="product-button"
+              onClick={() =>
+                onClickButtonCart({ id, imageUrl, title, price, oldPrice })
+              }
+            >
               В корзину
             </button>
             <div className="product-description">

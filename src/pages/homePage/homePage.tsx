@@ -6,7 +6,6 @@ import Bunner from "../../components/bunner/bunner";
 import Promotion from "../../components/promotion/promotion";
 import ProductDetails from "../../components/productDetails/productDetails";
 
-
 function HomePage() {
   const [visibleProduct, setVisibleProduct] = React.useState<boolean>(false);
   const [cardId, setCardId] = React.useState<number>(0);
@@ -37,7 +36,7 @@ function HomePage() {
       <>
         <Nav />
         <Bunner />
-        <Promotion onViewProduct={onViewProduct} />
+        <Promotion />
         {visibleProduct ? (
           <ProductDetails
             onCloseProduct={onCloseProduct}
