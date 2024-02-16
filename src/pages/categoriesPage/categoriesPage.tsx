@@ -24,10 +24,9 @@ function Categories() {
 
     function onClickLink(category: string) {
         setActiveLink(category);
-        console.log(category)
     }
 
-    //просмотр карточки товара
+
     // function onViewProduct(id: number) {
     //     setVisibleProduct(true);
     //     setCardId(id);
@@ -49,10 +48,10 @@ function Categories() {
                     <div className="productBlock flex">
                         <div className="cards-block">
                             {(cards.length > 0) ?
-                                cards.map((card) => (
+                                cards.map((card, i) => (
                                     <PromotionCard
                                         card={card}
-                                        key={card.id}
+                                        key={i}
                                     // onViewProduct={onViewProduct}
                                     />
                                 )) :

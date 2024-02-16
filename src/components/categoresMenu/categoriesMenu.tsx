@@ -2,7 +2,7 @@ import { menuСloth } from "../../const";
 
 type TCateoriesMenuProps = {
     activeLink: string;
-    onClickLink: (e: string) => string,
+    onClickLink: (value: string) => void;
 };
 
 
@@ -12,7 +12,7 @@ function CateoriesMenu({ activeLink, onClickLink }: TCateoriesMenuProps) {
         <ul className="submenu">
             <h2>Категории</h2>
             {menuСloth.map((item, i) => (
-                <li key={i} onClick={(e) => onClickLink(e.target.innerText)} className={activeLink === item ? "submenu-list active" : "submenu-list"}>{item}</li>
+                <li key={i} onClick={() => onClickLink(item)} className={activeLink === item ? "submenu-list active" : "submenu-list"}>{item}</li>
             ))}
         </ul>
     )
